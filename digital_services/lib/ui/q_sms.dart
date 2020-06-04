@@ -18,22 +18,19 @@ class SMS extends StatefulWidget {
 class _SMSState extends State<SMS> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Column(
-              children: <Widget>[
-                SizedBox(height: 12),
-                Text('What\'s your monthly spend on sms?',
-                              style: Theme.of(context).textTheme.headline),
-                SizedBox(height: 24),
-                myCard(context, '\$0 - \$5', () { _goTo(1);}),
-                myCard(context, '\$6 - \$15', () {_goTo(2);}),
-                myCard(context, '\$16 - \$25', () {_goTo(3);}),
-                myCard(context, '\$26 and above', () {_goTo(4);}),
+    return Column(
+            children: <Widget>[
+              SizedBox(height: 12),
+              Text('What\'s your monthly spend on sms?',
+                            style: Theme.of(context).textTheme.headline),
+              SizedBox(height: 24),
+              myCard(context, '\$0 - \$5', () { _goTo(1);}),
+              myCard(context, '\$6 - \$15', () {_goTo(2);}),
+              myCard(context, '\$16 - \$25', () {_goTo(3);}),
+              myCard(context, '\$26 and above', () {_goTo(4);}),
 
-              ],
-          ),
-    );
+            ],
+        );
   }
 
   _goTo(int id) {
