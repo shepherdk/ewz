@@ -15,23 +15,9 @@ Widget skButton({String label: "Opt in", Function onPress}) {
   );
 }
 
-Widget myCard(context, text, onTapped) => Card(
-//                color: Colors.blue,
-              elevation: 4,
-              margin: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Padding(
-                    padding: EdgeInsets.all(12.0),
-                    child: GestureDetector(
-                      onTap: onTapped,
-                      child: Container(
-                        child: Text(text,
-                        style: Theme.of(context).textTheme.subhead),  
-                      ),
-                    ),
-                  ),
-                ],
-                ),
-              );
+Widget myCard(context, text, onTapped) => RaisedButton(
+  onPressed: onTapped,
+  elevation: 3,
+  child: Container(child: Center(child: Text(text)), width: MediaQuery.of(context).size.width,),
+
+);

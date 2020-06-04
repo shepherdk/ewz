@@ -1,9 +1,11 @@
 import 'package:digital_services/ui/device.dart';
+import 'package:digital_services/ui/failure.dart';
 import 'package:digital_services/ui/q_age.dart';
 import 'package:digital_services/ui/q_data.dart';
 import 'package:digital_services/ui/q_favorite_bundle.dart';
 import 'package:digital_services/ui/q_sms.dart';
 import 'package:digital_services/ui/q_voice.dart';
+import 'package:digital_services/ui/success.dart';
 import 'package:digital_services/utils/colors.dart';
 import 'package:digital_services/utils/providers.dart';
 import 'package:flutter/material.dart';
@@ -38,17 +40,20 @@ class _QBodyState extends State<QBody> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return ListView(
       children: <Widget>[
-        SizedBox(height: 24),
-        LinearProgressIndicator(value: (Provider.of<Progress>(context, listen: false).index+1/6), backgroundColor: kShrinePink50,),
+        SizedBox(height: 16),
         Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Container(
-            height: MediaQuery.of(context).size.height * 0.8,
-            child: SingleChildScrollView(
-                          child: IndexedStack(
-                index: 0, //_store this value in provider
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+          child: Provider.of<Progress>(context, listen: true).index <= 5 ? Text('Question ${Provider.of<Progress>(context, listen: true).index+1} of 6'): SizedBox(),
+        ),
+        Container(
+          height: MediaQuery.of(context).size.height * 0.8,
+          width: MediaQuery.of(context).size.width* 0.9,
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: IndexedStack(
+                index: Provider.of<Progress>(context, listen: false).index.toInt(), //_store this value in provider
                 children: <Widget>[
                   SMS(),
                   DataPage(),
@@ -56,9 +61,10 @@ class _QBodyState extends State<QBody> {
                   Device(),
                   Bundle(),
                   Age(),
+                  Success(),
+                  Failure()
                 ],
               ),
-            ),
           ),
         )
       ],

@@ -12,7 +12,7 @@ class SubmitSurvey{
   static Future<bool> submit(SubmitModel body,SurveyAnswersModel getParams, BuildContext context) async {
     print(body.toJson());
     print(getParams.toJson());
-    final response = await NetworkUtils(token: Provider.of<AuthProvider>(context, listen: false).token)
+    final response = await NetworkUtils(token: Provider.of<AuthProvider>(context, listen: false).token.toString())
         .postAuth('${SubmitURL.submit}/${getParams.sms}/${getParams.data}/${getParams.voice}/${getParams.device}/${getParams.bundle}', body);
         // save token and model
        //print(token);

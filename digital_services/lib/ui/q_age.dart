@@ -28,8 +28,8 @@ class _AgeState extends State<Age> {
 
     return Column(
           children: <Widget>[
-            SizedBox(height: 24),
-            Text('How old are you?',
+            SizedBox(height: 12),
+            Text('How old are you?', textAlign: TextAlign.left,
                 style: Theme.of(context).textTheme.headline),
             SizedBox(height: 80),
             Form(
@@ -105,7 +105,7 @@ class _AgeState extends State<Age> {
             voice: Provider.of<SurveyAnswers>(context, listen: false).voice,
           ),
           context);
-      if (postAnswers == true) {
+      if (postAnswers == false) {
         // TODO Fix this using backend logic status codes 400 refuse to auth
         // Scaffold.of(context).showSnackBar(
         //   SnackBar(
@@ -114,6 +114,9 @@ class _AgeState extends State<Age> {
         //   ),
         // );
         print('FALSE!!!!!');
+        setState(() {  
+        Provider.of<Progress>(context, listen: false).index = 7;
+        });
       } else {
         //
         //print(Provider.of<LoginProvider>(context).token);
@@ -132,8 +135,10 @@ class _AgeState extends State<Age> {
 
         //Store phone number
         //
-            Provider.of<Progress>(context, listen: false).index = 5;
-
+            setState(() {
+            Provider.of<Progress>(context, listen: false).index = 6;
+              
+            });
         //Navigator.of(context).pushReplacementNamed(Strings.successRoute);
       }
     }

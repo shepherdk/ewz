@@ -27,6 +27,7 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (_) => AuthProvider()),
         ChangeNotifierProvider(create: (_) => SurveyAnswers()),
+        ChangeNotifierProvider(create: (_) => Progress()),
       ],
           child: MaterialApp(
         title: 'digital_services Digital Services Base',

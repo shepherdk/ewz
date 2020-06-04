@@ -12,12 +12,8 @@ class Voice extends StatefulWidget {
 class _VoiceState extends State<Voice> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-          backgroundColor: Colors.grey[200],
-          body: Column(
+    return Column(
             children: <Widget>[
-              SizedBox(height: 24),
-              Padding(padding: EdgeInsets.all(10),child:LinearProgressIndicator( value:  0.45,)),
               SizedBox(height: 12),
               Text('What\'s your monthly spend on voice?',
                             style: Theme.of(context).textTheme.headline),
@@ -28,8 +24,7 @@ class _VoiceState extends State<Voice> {
               myCard(context, '\$26 and above', () => _goTo(4)),
 
             ],
-        ),
-    );
+        );
   }
 
       _goTo(int id) {

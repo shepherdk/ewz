@@ -14,7 +14,7 @@ class _DataPageState extends State<DataPage> {
   Widget build(BuildContext context) {
     return Column(
             children: <Widget>[
-              SizedBox(height: 24),
+              SizedBox(height: 12),
               Text('What\'s your monthly spend on data?',
                             style: Theme.of(context).textTheme.headline),
               SizedBox(height: 10),
