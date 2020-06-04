@@ -28,6 +28,8 @@ class _BundleState extends State<Bundle> {
 
     _goTo(int id) {
     Provider.of<SurveyAnswers>(context, listen: false).bundle = id;
-    Navigator.pushNamed(context, Strings.ageRoute);
+    Provider.of<Progress>(context, listen: false).index = 4;
+
+    // Navigator.pushNamed(context, Strings.ageRoute);
   }
 }

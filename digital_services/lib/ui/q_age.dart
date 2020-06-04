@@ -132,7 +132,9 @@ class _AgeState extends State<Age> {
 
         //Store phone number
         //
-        Navigator.of(context).pushReplacementNamed(Strings.successRoute);
+            Provider.of<Progress>(context, listen: false).index = 5;
+
+        //Navigator.of(context).pushReplacementNamed(Strings.successRoute);
       }
     }
   }

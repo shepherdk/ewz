@@ -5,7 +5,9 @@ import 'package:digital_services/ui/q_favorite_bundle.dart';
 import 'package:digital_services/ui/q_sms.dart';
 import 'package:digital_services/ui/q_voice.dart';
 import 'package:digital_services/utils/colors.dart';
+import 'package:digital_services/utils/providers.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class Questions extends StatefulWidget {
   @override
@@ -33,14 +35,13 @@ class QBody extends StatefulWidget {
 }
 
 class _QBodyState extends State<QBody> {
-  int index = 0;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
         SizedBox(height: 24),
-        LinearProgressIndicator(value: (index+1/6), backgroundColor: kShrinePink50,),
+        LinearProgressIndicator(value: (Provider.of<Progress>(context, listen: false).index+1/6), backgroundColor: kShrinePink50,),
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: Container(

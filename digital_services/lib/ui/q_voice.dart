@@ -34,7 +34,9 @@ class _VoiceState extends State<Voice> {
 
       _goTo(int id) {
     Provider.of<SurveyAnswers>(context, listen: false).voice = id;
-    Navigator.pushNamed(context, Strings.deviceRoute);
+        Provider.of<Progress>(context, listen: false).index = 3;
+
+   // Navigator.pushNamed(context, Strings.deviceRoute);
   }
 
 }

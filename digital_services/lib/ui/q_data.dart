@@ -29,7 +29,8 @@ class _DataPageState extends State<DataPage> {
 
     _goTo(int id) {
     Provider.of<SurveyAnswers>(context, listen: false).data = id;
-    Navigator.pushNamed(context, Strings.voiceRoute);
+        Provider.of<Progress>(context, listen: false).index = 2;
+    // Navigator.pushNamed(context, Strings.voiceRoute);
   }
 
 }

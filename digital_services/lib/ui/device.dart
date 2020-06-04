@@ -28,6 +28,7 @@ class _DeviceState extends State<Device> {
 
     _goTo(int id) {
     Provider.of<SurveyAnswers>(context, listen: false).device = id;
-    Navigator.pushNamed(context, Strings.favoriteBundleRoute);
+    Provider.of<Progress>(context, listen: false).index = 4;
+    //Navigator.pushNamed(context, Strings.favoriteBundleRoute);
   }
 }

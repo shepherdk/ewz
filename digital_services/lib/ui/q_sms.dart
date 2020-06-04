@@ -36,6 +36,7 @@ class _SMSState extends State<SMS> {
   _goTo(int id) {
     print(id);
     Provider.of<SurveyAnswers>(context, listen: false).sms = id;
-    Navigator.pushNamed(context, Strings.dataRoute);
+    Provider.of<Progress>(context, listen: false).index = 1;
+    // Navigator.pushNamed(context, Strings.dataRoute);
   }
 }

@@ -24,6 +24,7 @@ class AuthProvider with ChangeNotifier {
 }
 
 class SurveyAnswers with ChangeNotifier {
+
 //sms/data/voice/device/bundle/age
   int _sms = 0;
   int _data = 0;
@@ -69,3 +70,19 @@ class SurveyAnswers with ChangeNotifier {
   }
 
 }
+
+class Progress with ChangeNotifier {
+  int _index = 0;
+
+  int get index => _index;
+  set index(int n) {
+    _index = n;
+    notifyListeners();
+  }
+  }
+
+  // LoginResponseModel get loginResponse => _loginResponse;
+  // set loginResponse(LoginResponseModel p) {
+  //   _loginResponse = p;
+  //   notifyListeners();
+  // }
